@@ -8,10 +8,6 @@ const Hero = ({ t, visibility, ready }) => (
         className="hero-copy"
         style={{ animation: ready ? "fadeUp 1s .1s ease both" : "none" }}
       >
-        <div className="hero-eyebrow">
-          <span className="hero-dot" />
-          Software Engineer
-        </div>
         <h1 className="hero-title">
           {t.h1a}
           <br />

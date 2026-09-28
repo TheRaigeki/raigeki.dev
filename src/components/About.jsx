@@ -1,7 +1,6 @@
 const About = ({ t, stack }) => (
   <section id="about" className="section">
     <div className="section-head section-head--about">
-      <span className="section-num">02</span>
       <span className="section-label">{t.navAbout}</span>
       <span className="section-dot" />
       <p className="section-lead">{t.aboutTitle}</p>

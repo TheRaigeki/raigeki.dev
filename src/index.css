@@ -368,24 +368,6 @@ button,
   opacity: 0;
   max-width: 820px;
 }
-.hero-eyebrow {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #a6c8ff;
-  margin-bottom: 26px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.hero-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #a6c8ff;
-  box-shadow: 0 0 12px #a6c8ff;
-}
 .hero-title {
   font-family: "Instrument Sans", sans-serif;
   font-weight: 500;
@@ -451,12 +433,6 @@ button,
 }
 .section-head--about {
   max-width: 860px;
-}
-.section-num {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  color: #3d4c61;
 }
 .section-label {
   font-size: clamp(24px, 2.4vw, 32px);

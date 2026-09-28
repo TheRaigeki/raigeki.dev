@@ -3,7 +3,6 @@ import { CONTACT_EMAIL } from "../constants";
 const ContactTeaser = ({ t, onOpenContact }) => (
   <section id="contact-teaser" className="section section--contact">
     <div className="section-head">
-      <span className="section-num">03</span>
       <span className="section-label">{t.navContact}</span>
       <span className="section-dot" />
       <p className="section-lead">{t.contactTitle}</p>
