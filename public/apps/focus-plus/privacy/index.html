@@ -18,7 +18,7 @@
 <header class="top">
   <div class="eyebrow"><span class="brand">Focus+</span> · raigeki.dev</div>
   <h1>Datenschutzerklärung</h1>
-  <div class="stand">Stand: August 2026</div>
+  <div class="stand">Stand: Oktober 2026</div>
 </header>
 
 <div class="callout">
@@ -54,7 +54,7 @@
 <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Erfüllung des Nutzungsvertrages).</p>
 
 <h2>5. Vertrauensperson</h2>
-<p>Focus+ erlaubt dir, eine Vertrauensperson zu hinterlegen, die benachrichtigt wird, wenn der Schutz deaktiviert oder umgangen werden soll. Dafür verarbeiten wir:</p>
+<p>Focus+ erlaubt dir, eine Vertrauensperson zu hinterlegen, die benachrichtigt wird, wenn der Schutz deaktiviert oder umgangen werden soll oder wenn er endet, weil dein Abonnement ausgelaufen ist. Dafür verarbeiten wir:</p>
 <ul>
   <li>Die von dir eingegebene E-Mail-Adresse oder Mobilfunknummer der Vertrauensperson</li>
   <li>Deinen Namen, damit die Vertrauensperson die Nachricht zuordnen kann</li>
@@ -74,49 +74,45 @@
 
 <h2>7. Abonnement und Zahlung</h2>
 <p>Focus+ wird als kostenpflichtiges Abonnement angeboten. Die Zahlungsabwicklung erfolgt ausschließlich über den Google Play Store beziehungsweise den Apple App Store. Zur Verwaltung des Abonnementstatus setzen wir RevenueCat ein.</p>
-<p><strong>Wir erhalten keine Zahlungsdaten.</strong> Kreditkartennummern, Bankverbindungen oder Rechnungsadressen werden ausschließlich von Google beziehungsweise Apple verarbeitet und uns nicht übermittelt. Wir erfahren lediglich, ob ein aktives Abonnement besteht, sowie eine pseudonyme Kennung zur Zuordnung.</p>
+<p><strong>Wir erhalten keine Zahlungsdaten.</strong> Kreditkartennummern, Bankverbindungen oder Rechnungsadressen werden ausschließlich von Google beziehungsweise Apple verarbeitet und uns nicht übermittelt. Wir erfahren lediglich, ob ein aktives Abonnement besteht, bis wann es läuft und welches Abonnement gewählt wurde.</p>
+<p>Bei RevenueCat wird dein Abonnement unter der Kennung deines Nutzerkontos geführt, damit es dir auf jedem Gerät zur Verfügung steht. RevenueCat meldet uns Änderungen des Abonnementstatus; wir speichern diesen Status in unserer Datenbank, damit die App auch dann erkennt, dass ein Abonnement ausgelaufen ist, wenn sie längere Zeit nicht geöffnet wurde. In diesem Fall wird der Schutz automatisch ausgeschaltet und deine Vertrauensperson darüber informiert (Abschnitt 5).</p>
 <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
 
 <h2>8. Empfänger und Auftragsverarbeiter</h2>
 <p>Wir setzen sorgfältig ausgewählte Dienstleister ein, mit denen Verträge zur Auftragsverarbeitung nach Art. 28 DSGVO bestehen:</p>
 <table>
   <tr><th>Dienstleister</th><th>Zweck</th><th>Daten</th></tr>
-  <tr><td>Supabase</td><td>Konto, Datenbank, Serverfunktionen</td><td>Kontodaten, Bestätigungscodes</td></tr>
+  <tr><td>Supabase</td><td>Konto, Datenbank, Serverfunktionen, Versand der Konto-E-Mails</td><td>Kontodaten, Bestätigungscodes, Abonnementstatus</td></tr>
   <tr><td>Twilio</td><td>SMS-Versand an die Vertrauensperson</td><td>Mobilfunknummer, Nachrichtentext</td></tr>
-  <tr><td>Resend</td><td>E-Mail-Versand an die Vertrauensperson</td><td>E-Mail-Adresse, Nachrichtentext</td></tr>
-  <tr><td>RevenueCat</td><td>Verwaltung des Abonnementstatus</td><td>Pseudonyme Kennung, Abo-Status</td></tr>
+  <tr><td>Resend</td><td>E-Mail-Versand: Konto-E-Mails an dich (Bestätigung, Passwort) und Nachrichten an die Vertrauensperson</td><td>E-Mail-Adresse, Nachrichtentext</td></tr>
+  <tr><td>RevenueCat</td><td>Verwaltung des Abonnementstatus</td><td>Kennung deines Nutzerkontos, Abo-Status</td></tr>
   <tr><td>Google / Apple</td><td>App-Vertrieb, Zahlung, Anmeldung</td><td>Konto- und Zahlungsdaten beim jeweiligen Anbieter</td></tr>
   <tr><td>Google / Cloudflare</td><td>Öffentliche DNS-Resolver (Android)</td><td>DNS-Anfragen, siehe Abschnitt 6</td></tr>
-  <tr><td>Expo</td><td>Push-Benachrichtigungen</td><td>Push-Token, siehe Abschnitt 9</td></tr>
 </table>
 <p>Einige dieser Anbieter haben ihren Sitz in den USA. Die Übermittlung erfolgt auf Grundlage von Standardvertragsklauseln der EU-Kommission beziehungsweise, soweit einschlägig, auf Basis eines Angemessenheitsbeschlusses.</p>
 
-<h2>9. Push-Benachrichtigungen</h2>
-<p>Focus+ kann dir Push-Benachrichtigungen senden, etwa Erinnerungen oder Hinweise zum Schutzstatus. Dafür wird ein gerätebezogenes Push-Token erzeugt und über Expo sowie die Dienste von Google (FCM) beziehungsweise Apple (APNs) verarbeitet. Das Token lässt keinen unmittelbaren Rückschluss auf deine Person zu.</p>
-<p>Du kannst Push-Benachrichtigungen jederzeit in den Systemeinstellungen deines Geräts deaktivieren.</p>
-<p>Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung durch Erteilung der Systemberechtigung).</p>
-
-<h2>10. Kein Tracking, keine Analyse, keine Werbung</h2>
+<h2>9. Kein Tracking, keine Analyse, keine Werbung</h2>
 <p>Focus+ enthält <strong>keine</strong> Analyse- oder Tracking-Werkzeuge, keine Werbenetzwerke und keine Werbe-Identifikatoren. Es werden keine Nutzungsprofile erstellt und keine Daten zu Werbezwecken an Dritte weitergegeben. Wir erheben auch keine Absturzberichte.</p>
 
-<h2>11. Speicherdauer</h2>
+<h2>10. Speicherdauer</h2>
 <ul>
   <li><strong>Kontodaten:</strong> bis zur Löschung des Kontos</li>
   <li><strong>Bestätigungscodes:</strong> bis zur Einlösung, längstens bis zum Ablauf des Codes</li>
+  <li><strong>Abonnementstatus:</strong> bis zur Löschung des Kontos</li>
   <li><strong>Lokale Daten auf dem Gerät:</strong> bis zur Deinstallation der App</li>
   <li><strong>Zustellprotokolle bei Twilio und Resend:</strong> nach deren jeweiligen Aufbewahrungsfristen; hierauf haben wir keinen Einfluss</li>
   <li><strong>Zahlungs- und Abrechnungsdaten:</strong> bei Google beziehungsweise Apple nach den dort geltenden gesetzlichen Aufbewahrungsfristen</li>
 </ul>
 
-<h2>12. Löschung deines Kontos</h2>
+<h2>11. Löschung deines Kontos</h2>
 <p>Du kannst dein Konto und die zugehörigen Daten jederzeit löschen lassen. Alle Einzelheiten stehen auf der Seite <a href="/apps/focus-plus/delete-account">Konto löschen</a>:</p>
 <ul>
   <li><strong>In der App:</strong> unter „Einstellungen" über die Funktion zur Kontolöschung</li>
   <li><strong>Per E-Mail:</strong> formlos an <a href="mailto:info@raigeki.dev">info@raigeki.dev</a>, unter Angabe der E-Mail-Adresse deines Kontos</li>
 </ul>
-<p>Gelöscht werden dein Nutzerkonto sowie alle zu dir gespeicherten Bestätigungscodes und Kontaktdaten der Vertrauensperson. Daten, die ausschließlich lokal auf deinem Gerät liegen, entfernst du durch Deinstallation der App. Zustellprotokolle bei den Versanddienstleistern sowie Abrechnungsdaten bei Google und Apple unterliegen deren eigenen Fristen.</p>
+<p>Gelöscht werden dein Nutzerkonto, der bei uns gespeicherte Abonnementstatus, dein Kundeneintrag bei RevenueCat sowie alle zu dir gespeicherten Bestätigungscodes und Kontaktdaten der Vertrauensperson. Daten, die ausschließlich lokal auf deinem Gerät liegen, entfernst du durch Deinstallation der App. Zustellprotokolle bei den Versanddienstleistern sowie Abrechnungsdaten bei Google und Apple unterliegen deren eigenen Fristen.</p>
 
-<h2>13. Deine Rechte</h2>
+<h2>12. Deine Rechte</h2>
 <p>Dir stehen gegenüber dem Verantwortlichen folgende Rechte zu:</p>
 <ul>
   <li>Auskunft über die zu deiner Person verarbeiteten Daten (Art. 15 DSGVO)</li>
@@ -129,10 +125,10 @@
 </ul>
 <p>Zur Ausübung genügt eine formlose Nachricht an <a href="mailto:info@raigeki.dev">info@raigeki.dev</a>.</p>
 
-<h2>14. Beschwerderecht</h2>
+<h2>13. Beschwerderecht</h2>
 <p>Du hast das Recht, dich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung deiner personenbezogenen Daten zu beschweren. Zuständig ist die Aufsichtsbehörde deines gewöhnlichen Aufenthaltsorts, deines Arbeitsplatzes oder des Orts der mutmaßlichen Datenschutzverletzung.</p>
 
-<h2>15. Änderungen dieser Datenschutzerklärung</h2>
+<h2>14. Änderungen dieser Datenschutzerklärung</h2>
 <p>Wir passen diese Datenschutzerklärung an, wenn sich die Funktionen der App oder die rechtlichen Rahmenbedingungen ändern. Die jeweils aktuelle Fassung ist unter dieser Adresse abrufbar.</p>
 
 <footer class="bottom">

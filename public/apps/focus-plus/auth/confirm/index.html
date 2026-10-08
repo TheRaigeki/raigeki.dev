@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex,nofollow" />
+<meta name="description" content="Bestätigungsseite der App Focus+." />
+<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/apps/focus-plus/_style.css" />
+<title>Bestätigung · Focus+</title>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="eyebrow"><span class="brand">Focus+</span> · raigeki.dev</div>
+  <h1 id="title">Einen Moment …</h1>
+</header>
+
+<p id="text">Du wirst gleich zur App weitergeleitet.</p>
+<p id="action" hidden><a id="link" href="#">Weiter zur App</a></p>
+
+<div class="callout" id="help" hidden>
+  <p><strong>Nichts passiert?</strong> Öffne diese E-Mail auf dem Handy, auf dem Focus+ installiert ist, und tippe den Link dort an. Hilft das nicht, fordere in der App einen neuen Link an.</p>
+</div>
+
+<footer class="bottom">
+  <a href="/apps/focus-plus/privacy">Datenschutzerklärung</a>
+  <a href="mailto:info@raigeki.dev">info@raigeki.dev</a>
+  <a href="/">raigeki.dev</a>
+</footer>
+
+</div>
+
+<script>
+// The links in Focus+ e-mails point here instead of straight at Supabase, so
+// what people see in their inbox is raigeki.dev. Supabase still has to check
+// the token, so this page hands it on and lets the app take over.
+(function () {
+  var SUPABASE_URL = "https://vddymrpqxzzeriershem.supabase.co";
+  var TYPES = { signup: 1, recovery: 1, email_change: 1, magiclink: 1, invite: 1, email: 1 };
+
+  var params = new URLSearchParams(window.location.search);
+  var token = params.get("token_hash") || params.get("token");
+  var type = params.get("type");
+  var redirectTo = params.get("redirect_to");
+
+  var title = document.getElementById("title");
+  var text = document.getElementById("text");
+  var help = document.getElementById("help");
+
+  if (!token || !type || !TYPES[type]) {
+    title.textContent = "Dieser Link ist unvollständig.";
+    text.textContent = "Bitte öffne den Link direkt aus der E-Mail von Focus+ oder fordere in der App einen neuen an.";
+    help.hidden = false;
+    return;
+  }
+
+  var target =
+    SUPABASE_URL + "/auth/v1/verify?token=" + encodeURIComponent(token) +
+    "&type=" + encodeURIComponent(type) +
+    (redirectTo ? "&redirect_to=" + encodeURIComponent(redirectTo) : "");
+
+  var link = document.getElementById("link");
+  link.href = target;
+  document.getElementById("action").hidden = false;
+
+  // Give the browser a beat to paint, then go. The manual link stays for
+  // browsers that refuse to follow a redirect into an app scheme on their own.
+  setTimeout(function () { window.location.replace(target); }, 300);
+  setTimeout(function () { help.hidden = false; }, 4000);
+})();
+</script>
+</body>
+</html>
