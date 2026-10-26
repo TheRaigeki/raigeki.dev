@@ -1,4 +1,4 @@
-FROM node:20-alpine AS build
+FROM node:22.23.4-alpine AS build
 WORKDIR /app
 RUN npm install -g pnpm@9
 COPY package.json pnpm-lock.yaml ./
@@ -9,7 +9,7 @@ RUN pnpm build
 # The site is static apart from one POST, so a small Node server does both:
 # it serves dist/ (with gzip and immutable caching for the hashed assets) and
 # takes the contact form. Replaces nginx, which could not send the mail.
-FROM node:20-alpine
+FROM node:22.23.4-alpine
 WORKDIR /app
 ENV NODE_ENV=production
 RUN npm install -g pnpm@9
